@@ -1,0 +1,6 @@
+add_library(soa bitmap_soa.cpp)
+find_package(OpenMP)
+if(OpenMP_CXX_FOUND)
+    target_link_libraries(soa PUBLIC OpenMP::OpenMP_CXX common)
+endif()
+target_include_directories(soa PUBLIC ..)
